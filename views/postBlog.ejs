@@ -1,0 +1,45 @@
+<%- include ('./partials/navbar.ejs') %>
+
+    <section class=" parallex-3 py-5">
+        <div class=" py-5 text-white  text-center">
+            <div class="row  mt-3">
+                <div class="col-lg-9 py-3 mt-3 mx-auto about-page">
+                    <h1><span>ADD A</span> BLOG</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <img class="img-fluid registerImg" src="../images/write.jpg" alt="">
+                </div>
+                <div class="col-md-6 col-lg-6 py-5 mt-5">
+                    <form class="row g-3">
+                        <div class="col-md-6">
+                            <label for="category" class="form-label">Category</label>
+                            <input type="text" class="form-control" id="fname" placeholder="category">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="title" class="form-label">Title</label>
+                            <input type="text" class="form-control" id="lname" placeholder="Title">
+                        </div>
+
+                        <div class="col-12 mt-5">
+                            <textarea name="" id="" cols="90" rows="5" placeholder="Write yor message...."></textarea>
+                        </div>
+
+                        <div class="col-12 mt-3">
+                            <input type="file" class="form-control" id="">
+                        </div>
+                        <div class="col-12">
+                            <input type="submit" value="Send" class="reg-btn">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <%- include ('./partials/footer.ejs') %>
