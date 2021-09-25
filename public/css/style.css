@@ -889,3 +889,6 @@ textarea:focus {
   width: 50%;
   height: 600px;
 }
+.text-style {
+  text-align: justify;
+}
