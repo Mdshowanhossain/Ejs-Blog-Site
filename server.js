@@ -4,7 +4,6 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 require('./Database/db')
 
-
 const home = require('./routes/home');
 const about = require('./routes/about');
 const contact = require('./routes/contact');
