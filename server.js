@@ -26,7 +26,7 @@ app.use('/login', login)
 app.use('/registration', registration)
 app.use('/popularblog', popularBlog)
 app.use('/postBlog', postBlog)
-app.use('/readBlog', readBlog)
+// app.use('/readBlog', readBlog)
 
 
 app.listen(PORT, () => {
