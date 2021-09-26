@@ -11,7 +11,8 @@ const login = require('./routes/login');
 const registration = require('./routes/registration');
 const popularBlog = require('./routes/popular');
 const postBlog = require('./routes/postBlog');
-const readBlog = require('./routes/read');
+// const readBlog = require('./routes/read');
+const admin = require('./routes/admin');
 
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -27,6 +28,7 @@ app.use('/registration', registration)
 app.use('/popularblog', popularBlog)
 app.use('/postBlog', postBlog)
 // app.use('/readBlog', readBlog)
+app.use('/admin', admin)
 
 
 app.listen(PORT, () => {
