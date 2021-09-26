@@ -45,7 +45,36 @@
             <h4 class="title">POPULAR BLOG</h4>
             <div class="row">
                 <div class="col-md-8 col-lg-8">
-                    <div class=" full-card">
+
+                    <% blogs.forEach(blog=> { %>
+
+
+                        <div class=" full-card">
+                            <div class=" row g-0">
+                                <div class="col-md-4">
+                                    <img class="blog-card-img" src="../images/an.jpg" alt="">
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="card-body">
+                                        <small class="blog-card-heading">LIFESTYLE</small>
+                                        <h5 class="card-title">Making time for travel</h5>
+                                        <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
+                                            adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
+                                            minima blanditiis beatae
+                                            neque provident commodi voluptate recusandae sed nam perferendis illum, esse
+                                            repellendus explicabo excepturi. Accusantium laborum nisi repellat in.
+                                        </p>
+                                        <a href="">Read more</a>
+                                        <div class="optionnal">
+                                            <img class="writer-img" src="../images/an.jpg" alt="">
+                                            <small class="text-muted float-end">Last updated 3 mins ago</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                            <!-- <div class=" full-card">
                         <div class=" row g-0">
                             <div class="col-md-4">
                                 <img class="blog-card-img" src="../images/an.jpg" alt="">
@@ -58,8 +87,7 @@
                                         adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
                                         minima blanditiis beatae
                                         neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in.
-                                    </p>
+                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
                                     <a href="">Read more</a>
                                     <div class="optionnal">
                                         <img class="writer-img" src="../images/an.jpg" alt="">
@@ -82,8 +110,8 @@
                                         adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
                                         minima blanditiis beatae
                                         neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p><a
-                                        href="">Read more</a>
+                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
+                                    <a href="">Read more</a>
                                     <div class="optionnal">
                                         <img class="writer-img" src="../images/an.jpg" alt="">
                                         <small class="text-muted float-end">Last updated 3 mins ago</small>
@@ -105,8 +133,8 @@
                                         adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
                                         minima blanditiis beatae
                                         neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p><a
-                                        href="">Read more</a>
+                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
+                                    <a href="">Read more</a>
                                     <div class="optionnal">
                                         <img class="writer-img" src="../images/an.jpg" alt="">
                                         <small class="text-muted float-end">Last updated 3 mins ago</small>
@@ -128,8 +156,8 @@
                                         adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
                                         minima blanditiis beatae
                                         neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p><a
-                                        href="">Read more</a>
+                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
+                                    <a href="">Read more</a>
                                     <div class="optionnal">
                                         <img class="writer-img" src="../images/an.jpg" alt="">
                                         <small class="text-muted float-end">Last updated 3 mins ago</small>
@@ -137,30 +165,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class=" full-card">
-                        <div class=" row g-0">
-                            <div class="col-md-4">
-                                <img class="blog-card-img" src="../images/an.jpg" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <small class="blog-card-heading">LIFESTYLE</small>
-                                    <h5 class="card-title">Making time for travel</h5>
-                                    <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                        minima blanditiis beatae
-                                        neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p><a
-                                        href="">Read more</a>
-                                    <div class="optionnal">
-                                        <img class="writer-img" src="../images/an.jpg" alt="">
-                                        <small class="text-muted float-end">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </div>-->
                 </div>
                 <div class="col-md-4 col-lg-4">
                     <div>
@@ -170,7 +175,8 @@
                             </div>
                             <div class="card-img-overlay card-text-in text-center">
                                 <h5 class="card-title">I am Card</h5>
-                                <p class="text-center">This is a wider card with supporting text below as a natural.</p>
+                                <p class="text-center">This is a wider card with supporting text below as a natural.
+                                </p>
                             </div>
                         </div>
                         <div class="card text-white mt-3 mb-3">
@@ -192,8 +198,10 @@
                             <div class="p-p-body mt-3 mx-auto ">
                                 <h5 class="text-center intro">Hello! I am Xchng</h5>
                                 <p>
-                                    Hi, I'm Steven, a Florida native, who left my carrer in corporate wealth management
-                                    six years corporate wealth.Stories is a clean and minimal blog template for perfect
+                                    Hi, I'm Steven, a Florida native, who left my carrer in corporate wealth
+                                    management
+                                    six years corporate wealth.Stories is a clean and minimal blog template for
+                                    perfect
                                     for writers
                                 </p>
                                 <span class="icon-class">

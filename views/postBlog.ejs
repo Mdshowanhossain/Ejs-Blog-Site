@@ -17,22 +17,24 @@
                     <img class="img-fluid registerImg" src="../images/write.jpg" alt="">
                 </div>
                 <div class="col-md-6 col-lg-6 py-5 mt-5">
-                    <form class="row g-3">
+                    <form action="/postBlog" method="POST" type="application/x-www-urlencoded"
+                        enctype="multipart/form-data" class="row g-3">
                         <div class="col-md-6">
                             <label for="category" class="form-label">Category</label>
-                            <input type="text" class="form-control" id="fname" placeholder="category">
+                            <input type="text" class="form-control" placeholder="category" name="category">
                         </div>
                         <div class="col-md-6">
                             <label for="title" class="form-label">Title</label>
-                            <input type="text" class="form-control" id="lname" placeholder="Title">
+                            <input type="text" class="form-control" id="lname" placeholder="Title" name="title">
                         </div>
 
                         <div class="col-12 mt-5">
-                            <textarea name="" id="" cols="90" rows="5" placeholder="Write yor message...."></textarea>
+                            <textarea id="" cols="90" rows="5" placeholder="Write yor message...."
+                                name="description"></textarea>
                         </div>
 
                         <div class="col-12 mt-3">
-                            <input type="file" class="form-control" id="">
+                            <input type="file" class="form-control" id="" name="image">
                         </div>
                         <div class="col-12">
                             <input type="submit" value="Send" class="reg-btn">
