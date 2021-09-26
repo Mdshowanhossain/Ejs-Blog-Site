@@ -45,127 +45,35 @@
             <h4 class="title">POPULAR BLOG</h4>
             <div class="row">
                 <div class="col-md-8 col-lg-8">
-
                     <% blogs.forEach(blog=> { %>
-
-
                         <div class=" full-card">
                             <div class=" row g-0">
                                 <div class="col-md-4">
-                                    <img class="blog-card-img" src="../images/an.jpg" alt="">
+                                    <img class="blog-card-img" src="/uploads/blogImages/<%= blog.image %>" alt="">
                                 </div>
                                 <div class="col-md-8">
                                     <div class="card-body">
-                                        <small class="blog-card-heading">LIFESTYLE</small>
-                                        <h5 class="card-title">Making time for travel</h5>
-                                        <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                            adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                            minima blanditiis beatae
-                                            neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                            repellendus explicabo excepturi. Accusantium laborum nisi repellat in.
+                                        <small class="blog-card-heading">
+                                            <%= blog.category %>
+                                        </small>
+                                        <h5 class="card-title">
+                                            <%= blog.title %>
+                                        </h5>
+                                        <p class="card-text text-elepisis">
+                                            <%= blog.description %>
                                         </p>
-                                        <a href="">Read more</a>
+                                        <a href="/readBlog/<%= blog._id %>">Read more</a>
                                         <div class="optionnal">
-                                            <img class="writer-img" src="../images/an.jpg" alt="">
-                                            <small class="text-muted float-end">Last updated 3 mins ago</small>
+                                            <img class="writer-img" src="/uploads/blogImages/<%= blog.image %>" alt="">
+                                            <!-- <img class="writer-img" src="../images/an.jpg" alt=""> -->
+                                            <small class="text-muted float-end">Last updated <%= blog.updatedAt %>
+                                            </small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <% }) %>
-                            <!-- <div class=" full-card">
-                        <div class=" row g-0">
-                            <div class="col-md-4">
-                                <img class="blog-card-img" src="../images/an.jpg" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <small class="blog-card-heading">LIFESTYLE</small>
-                                    <h5 class="card-title">Making time for travel</h5>
-                                    <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                        minima blanditiis beatae
-                                        neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
-                                    <a href="">Read more</a>
-                                    <div class="optionnal">
-                                        <img class="writer-img" src="../images/an.jpg" alt="">
-                                        <small class="text-muted float-end">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" full-card">
-                        <div class=" row g-0">
-                            <div class="col-md-4">
-                                <img class="blog-card-img" src="../images/an.jpg" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <small class="blog-card-heading">LIFESTYLE</small>
-                                    <h5 class="card-title">Making time for travel</h5>
-                                    <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                        minima blanditiis beatae
-                                        neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
-                                    <a href="">Read more</a>
-                                    <div class="optionnal">
-                                        <img class="writer-img" src="../images/an.jpg" alt="">
-                                        <small class="text-muted float-end">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" full-card">
-                        <div class=" row g-0">
-                            <div class="col-md-4">
-                                <img class="blog-card-img" src="../images/an.jpg" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <small class="blog-card-heading">LIFESTYLE</small>
-                                    <h5 class="card-title">Making time for travel</h5>
-                                    <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                        minima blanditiis beatae
-                                        neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
-                                    <a href="">Read more</a>
-                                    <div class="optionnal">
-                                        <img class="writer-img" src="../images/an.jpg" alt="">
-                                        <small class="text-muted float-end">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=" full-card">
-                        <div class=" row g-0">
-                            <div class="col-md-4">
-                                <img class="blog-card-img" src="../images/an.jpg" alt="">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <small class="blog-card-heading">LIFESTYLE</small>
-                                    <h5 class="card-title">Making time for travel</h5>
-                                    <p class="card-text text-elepisis">Lorem ipsum dolor sit amet consectetur,
-                                        adipisicing elit. Rem dolorum, debitis delectus voluptatibus, obcaecati quae
-                                        minima blanditiis beatae
-                                        neque provident commodi voluptate recusandae sed nam perferendis illum, esse
-                                        repellendus explicabo excepturi. Accusantium laborum nisi repellat in. </p>
-                                    <a href="">Read more</a>
-                                    <div class="optionnal">
-                                        <img class="writer-img" src="../images/an.jpg" alt="">
-                                        <small class="text-muted float-end">Last updated 3 mins ago</small>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>-->
                 </div>
                 <div class="col-md-4 col-lg-4">
                     <div>
