@@ -1,24 +1,21 @@
 <%- include ('./partials/navbar.ejs') %>
 
-
     <div class="card mb-3">
-        <img src="/uploads/blogImages/<%= findBlog.image %>" alt="" class="card-img-top read-blog" alt="...">
+        <img src="../images/an.jpg" alt="" class="card-img-top read-blog" alt="...">
 
-        <div class="d-flex justify-between mt-3 text-center">
+        <div class="d-flex justify-between mt-5">
             <p class="text-muted  mx-auto">
-                <small class="">Last updated: <%= findBlog.updatedAt %></small>
+                <small class="float-end ms-5">Last updated 3 mins ago</small>
             </p>
             <p class="text-muted  mx-auto">
-                <small class="">Category: <%= findBlog.category %></small>
+                <small class="float-end ms-5">Category:</small>
             </p>
         </div>
         <div class="card-body">
-            <h5 class="card-title text-center">
-                <%= findBlog.title %>
-            </h5>
-            <p class="text-center">
-                <%= findBlog.description %>
-            </p>
+            <h5 class="card-title text-center">Card title</h5>
+            <p class="text-center">This is a wider card with supporting text below as a natural lead-in to
+                additional
+                content. This content is a little bit longer.</p>
         </div>
     </div>
     <%- include ('./partials/footer.ejs') %>

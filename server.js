@@ -32,3 +32,30 @@ app.use('/readBlog', readBlog)
 app.listen(PORT, () => {
     console.log(`Your server is Running at ${PORT}`)
 })
+
+
+
+// <%- include ('./partials/navbar.ejs') %>
+
+
+//     <div class="card mb-3">
+//         <img src="/uploads/blogImages/<%= findBlog.image %>" alt="" class="card-img-top read-blog" alt="...">
+
+//         <div class="d-flex justify-between mt-3 text-center">
+//             <p class="text-muted  mx-auto">
+//                 <small class="">Last updated: <%= findBlog.updatedAt %></small>
+//             </p>
+//             <p class="text-muted  mx-auto">
+//                 <small class="">Category: <%= findBlog.category %></small>
+//             </p>
+//         </div>
+//         <div class="card-body">
+//             <h5 class="card-title text-center">
+//                 <%= findBlog.title %>
+//             </h5>
+//             <p class="text-center">
+//                 <%= findBlog.description %>
+//             </p>
+//         </div>
+//     </div>
+//     <%- include ('./partials/footer.ejs') %>

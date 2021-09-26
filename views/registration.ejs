@@ -17,34 +17,34 @@
                     <img class="img-fluid registerImg" src="../images/reg.jpg" alt="">
                 </div>
                 <div class="col-md-6 col-lg-6 py-5 mt-5">
-                    <form class="row g-3">
+                    <form action="/registration/user" method="POST" type="application/x-www-urlencoded" class="row g-3">
                         <div class="col-md-6">
                             <label for="fname" class="form-label">First Name</label>
-                            <input type="text" class="form-control" id="fname" placeholder="First Name">
+                            <input type="text" class="form-control" id="fname" placeholder="First Name"
+                                name="firstname">
                         </div>
                         <div class="col-md-6">
                             <label for="lname" class="form-label">Last Name</label>
-                            <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                            <input type="text" class="form-control" id="lname" placeholder="Last Name" name="lastname">
                         </div>
 
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" id="email" placeholder="Email">
+                            <input type="email" class="form-control" id="email" placeholder="Email" name="email">
                         </div>
 
                         <div class="col-md-6">
                             <label for="password" class="form-label">Password</label>
-                            <input type="password" class="form-control" id="password" placeholder="Password">
+                            <input type="password" class="form-control" id="password" placeholder="Password"
+                                name="password">
                         </div>
 
                         <div class="col-md-6">
                             <label for="mnumber" class="form-label">Mobile Number</label>
-                            <input type="text" class="form-control" id="mnumber" placeholder="Mobile Number">
+                            <input type="text" class="form-control" id="mnumber" placeholder="Mobile Number"
+                                name="mobilenumber">
                         </div>
-                        <!-- <div class="col-md-6">
-                            <label for="age" class="form-label">Age</label>
-                            <input type="text" class="form-control" id="age" placeholder="Age">
-                        </div> -->
+
                         <div class="col-12">
                             <button type="submit" class="reg-btn">SIGN UP</button>
                         </div>
