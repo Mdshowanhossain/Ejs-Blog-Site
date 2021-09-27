@@ -1,14 +1,15 @@
 <%- include('./partials/navbar.ejs') %>
-    <section>
-        <div class="mb-3">
-            <img src="/uploads/blogImages/<%= findBlog.image %>" alt="" class="card-img-top read-blog" alt="...">
+
+    <!-- <section>
+        <div class="card mb-3">
+            <img src="../images/an.jpg" alt="" class="card-img-top read-blog" alt="...">
 
             <div class="d-flex justify-between mt-5">
                 <p class="text-muted  mx-auto">
-                    <small class="float-end ms-5">Last updated: <%= findBlog.updatedAt.toLocaleString() %></small>
+                    <small class="float-end ms-5">Last updated <%= findBlog.updatedAt.toLocaleDateString() %></small>
                 </p>
                 <p class="text-muted  mx-auto">
-                    <small class="float-end ms-5">Category: <%= findBlog.category %></small>
+                    <small class="float-end ms-5">Category:<%= findBlog.category %></small>
                 </p>
             </div>
             <div class="card-body">
@@ -20,5 +21,5 @@
                 </p>
             </div>
         </div>
-    </section>
+    </section> -->
     <%- include('./partials/footer.ejs') %>

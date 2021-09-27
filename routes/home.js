@@ -21,39 +21,27 @@ router.get('/', async (req, res) => {
     }
 });
 
+// const routers = (id = "") => {
+//     return function (req, res, next) {
+//         res.locals.dc = id;
+//         next();
+//     }
+// }
 
-router.get('/readBlog/:id', async (req, res) => {
+
+
+router.get('/read/:id', async (req, res) => {
     try {
         const findBlog = await Blog.findById({ _id: req.params.id });
+        console.log(findBlog)
         res.render('readpost', { findBlog: findBlog });
-        // console.log(req.params.id)
     } catch (err) {
-
+        console.log(err.message);
     }
 })
 
 
 
-
-
-
-
-
-
-// router.get('/all', async (req, res) => {
-//     try {
-//         const blog = await Blog.find()
-
-//         if (blog) {
-//             res.render('home', { blog: blog });
-//         } else {
-//             res.status(500).send('Not Found');
-//         }
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// });
 
 
 

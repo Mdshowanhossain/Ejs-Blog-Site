@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                <% findAdminData.forEach((data)=>{%>
+                <% adminData.forEach((data)=>{%>
                     <tr>
                         <th scope="row">
                             <%=data._id%>
@@ -31,10 +31,11 @@
                             <%=data.description%>
                         </td>
                         <td>
-                            <img class="table-img" src="/uploads/images/<%=data.image%>" alt="">
+                            <!-- <img class="table-img" src="/uploads/blogImages/<%= data.image %>" alt=""> -->
                         </td>
                         <td>
                             <small>
+                                <%= data.createdAt.toLocaleDateString() %>
                             </small>
                         </td>
                         <td>
