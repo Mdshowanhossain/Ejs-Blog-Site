@@ -1,5 +1,34 @@
-<%- include('./partials/navbar.ejs') %>
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Gugi&family=Lato:wght@300;400&family=Poppins:wght@200;300;400&display=swap"
+        rel="stylesheet">
+    <!-- FONTAWESOME CDN LINK -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <!-- BOOTSTRP CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- CHART START -->
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap@1.0.0/js/cdb.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cdbootstrap@1.0.0/js/bootstrap.min.js"></script>
+    <!-- CHART END -->
+
+    <title>Header_Html</title>
+</head>
+
+<body>
     <div id="admin">
         <div class="d-flex" id="wrapper">
             <!-- Sidebar -->
@@ -20,7 +49,7 @@
             <div id="page-content-wrapper">
                 <nav class="navbar navbar-expand-lg navbar-light bg-transparent py-4 px-4">
                     <div class="d-flex align-items-center">
-                        <i class="fas fa-align-left primary-text fs-4 me-3" id="menu-toggle"></i>
+                        <i class="fas fa-align-left fs-4 me-3" id="menu-toggle"></i>
                         <h2 class="fs-2 m-0">Dashboard</h2>
                     </div>
 
@@ -48,17 +77,14 @@
                 </nav>
 
                 <div class="container-fluid px-4">
-
                     <!-- SHOW DATA HERE -->
-
-
                     <div class="row my-5">
                         <h3 class="fs-4 mb-3">All Blogs</h3>
                         <div class="col">
                             <table class="table bg-white rounded shadow-sm  table-hover">
                                 <thead>
                                     <tr>
-                                        <th scope="col">Blog ID</th>
+                                        <th scope="col">No</th>
                                         <th scope="col">Category</th>
                                         <th scope="col">Title</th>
                                         <th scope="col">Description</th>
@@ -69,10 +95,10 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <% adminData.forEach((data)=>{%>
+                                    <% adminData.forEach((data, index)=>{%>
                                         <tr>
                                             <td>
-                                                <%=data._id%>
+                                                <%= index + 1%>
                                             </td>
                                             <td>
                                                 <%=data.category%>
@@ -94,13 +120,12 @@
                                             <!-- <td><a href="<%= data._id %>">DELETE</a></td> -->
 
 
-                                            <form action="/delete/<%= data._id %>">
-                                                <td> <input type="submit" value="Delete"></td>
-                                                <!-- <td><a href="/delete/<%= data._id %>">DELETE</a></td> -->
-                                            </form>
+                                            <!-- <form action="/admin/admin/managedata/delete/<%= data._id %>"> -->
+                                            <!-- <td> <input type="submit" value="Delete"></td> -->
+                                            <td><a href="/admin/managedata/delete/<%= data._id %>">DELETE</a></td>
+                                            <!-- </form> -->
                                         </tr>
                                         <% })%>
-
                                 </tbody>
                             </table>
                         </div>
@@ -113,95 +138,52 @@
     </div>
 
 
-    </section>
 
 
 
+    <!-- BOOTSTRAP CDN JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
 
 
+    <script>
+        const ctx = document.getElementById("chart").getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ["sunday", "monday", "tuesday",
+                    "wednesday", "thursday", "friday", "saturday"],
+                datasets: [{
+                    label: 'Last week',
+                    backgroundColor: 'rgba(161, 198, 247, 1)',
+                    borderColor: 'rgb(47, 128, 237)',
+                    data: [3000, 4000, 2000, 5000, 8000, 9000, 2000],
+                }]
+            },
+            options: {
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                        }
+                    }]
+                }
+            },
+        });
+    </script>
 
+    <script>
+        var el = document.getElementById("wrapper");
+        var toggleButton = document.getElementById("menu-toggle");
 
+        toggleButton.onclick = function () {
+            el.classList.toggle("toggled");
+        };
+    </script>
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- 
-    <section class="mt-5>
-
-
-        <div class=" mt-5">
-        <h2 class="my-5 text-center">THIS IS DASHBOARD</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">PRODUCT ID</th>
-                    <th scope="col">TITLE</th>
-                    <th scope="col">PRICE</th>
-                    <th scope="col">DESCRIPTION</th>
-                    <th scope="col">IMAGE</th>
-                    <th scope="col">CREATE</th>
-                    <th scope="col">OPTION</th>
-                    <th scope="col">OPTION</th>
-                </tr>
-            </thead>
-            <tbody>
-                <% adminData.forEach((data)=>{%>
-                    <tr>
-                        <th scope="row">
-                            <%=data._id%>
-                        </th>
-                        <td>
-                            <%=data.title%>
-                        </td>
-                        <td>
-                            <%=data.price%>
-                        </td>
-                        <td style="text-align: justify; letter-spacing:.03rem">
-                            <%=data.description%>
-                        </td>
-                        <td>
-                            <img class="table-img" src="/uploads/blogImages/<%= data.image %>" alt="">
-                        </td>
-                        <td>
-                            <small>
-                                <%= data.createdAt.toLocaleString() %>
-                            </small>
-                        </td>
-                        <td>
-                            <form href="/admin/edit>" method="POST">
-                                <button type="submit">EDIT</button>
-                            </form>
-                            <a href="/admin/edit/<%=data._id%>">EDIT</a>
-                        </td>
-                        <td>
-                            <form action="/admin/delete/<%=data._id%>" method="POST">
-                                <button type="submit">DELETE</button>
-                            </form>
-                        </td>
-                    </tr>
-            </tbody>
-            <% })%>
-        </table>
-        </div>
-    </section> -->
-    <%- include('./partials/footer.ejs') %>
+</html>

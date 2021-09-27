@@ -18,9 +18,7 @@ router.get('/managedata', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
         const editBlog = await Blog.findById({ _id: req.params.id });
-
         res.render('adminEditBlog', { editBlog: editBlog });
-
     } catch (err) {
         console.log(err.message);
     }
@@ -42,15 +40,12 @@ router.post('/adminpost/:id', async (req, res) => {
     }
 });
 
-router.post('/delete/:id', async (req, res) => {
+router.get('/managedata/delete/:id', async (req, res) => {
     try {
-
-        console.log(req.params.id)
-
-        // await Blog.findByIdAndDelete({ _id: req.params.id });
-        // res.redirect('/admin/managedata');
+        await Blog.findByIdAndDelete({ _id: req.params.id });
+        res.redirect('/admin/managedata');
     } catch (err) {
-        console.log(err)
+        console.log(err.message);
     }
 })
 
