@@ -4,18 +4,52 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
     res.render('admin');
-    console.log('I am ADMIN')
 });
 
-router.get('/manage', async (req, res) => {
+router.get('/managedata', async (req, res) => {
     try {
         const adminData = await Blog.find();
         res.render('adminData', { adminData: adminData });
-        console.log(adminData[0].createdAt)
     } catch (err) {
         console.log(err.message)
     }
 });
+
+router.get('/:id', async (req, res) => {
+    try {
+        const editBlog = await Blog.findById({ _id: req.params.id });
+
+        res.render('adminEditBlog', { editBlog: editBlog });
+
+    } catch (err) {
+        console.log(err.message);
+    }
+});
+
+router.post('/adminpost/:id', async (req, res) => {
+    const { category, title, description } = req.body;
+    try {
+        await Blog.findByIdAndUpdate({ _id: req.params.id }, {
+            $set: {
+                category: category,
+                title: title,
+                description: description,
+            }
+        });
+        res.redirect('/admin')
+    } catch (err) {
+        console.log(err.message);
+    }
+});
+
+router.post('/delete/:id', async (req, res) => {
+    try {
+        await Blog.findByIdAndDelete({ _id: req.params.id });
+    } catch (err) {
+        console.log(err)
+    }
+})
+
 
 
 
