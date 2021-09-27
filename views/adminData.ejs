@@ -91,7 +91,13 @@
                                                 <%=data.createdAt.toLocaleString()%>
                                             </td>
                                             <td><a href="<%= data._id %>">EDIT</a></td>
-                                            <td><a href="">DELETE</a></td>
+                                            <!-- <td><a href="<%= data._id %>">DELETE</a></td> -->
+
+
+                                            <form action="/delete/<%= data._id %>">
+                                                <td> <input type="submit" value="Delete"></td>
+                                                <!-- <td><a href="/delete/<%= data._id %>">DELETE</a></td> -->
+                                            </form>
                                         </tr>
                                         <% })%>
 

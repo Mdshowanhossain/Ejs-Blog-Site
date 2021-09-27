@@ -44,7 +44,11 @@ router.post('/adminpost/:id', async (req, res) => {
 
 router.post('/delete/:id', async (req, res) => {
     try {
-        await Blog.findByIdAndDelete({ _id: req.params.id });
+
+        console.log(req.params.id)
+
+        // await Blog.findByIdAndDelete({ _id: req.params.id });
+        // res.redirect('/admin/managedata');
     } catch (err) {
         console.log(err)
     }
