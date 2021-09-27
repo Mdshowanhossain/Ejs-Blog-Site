@@ -116,13 +116,13 @@
                                             <td>
                                                 <%=data.createdAt.toLocaleString()%>
                                             </td>
-                                            <td><a href="<%= data._id %>">EDIT</a></td>
+                                            <td><a href="admin/<%= data._id %>">EDIT</a></td>
                                             <!-- <td><a href="<%= data._id %>">DELETE</a></td> -->
 
 
                                             <!-- <form action="/admin/admin/managedata/delete/<%= data._id %>"> -->
                                             <!-- <td> <input type="submit" value="Delete"></td> -->
-                                            <td><a href="/admin/managedata/delete/<%= data._id %>">DELETE</a></td>
+                                            <td><a href="admin/delete/<%= data._id %>">DELETE</a></td>
                                             <!-- </form> -->
                                         </tr>
                                         <% })%>

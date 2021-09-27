@@ -2,14 +2,22 @@ const express = require('express');
 const Blog = require('../models/blogSchema');
 const router = express.Router();
 
-router.get('/', (req, res) => {
-    res.render('admin');
-});
+// router.get('/', (req, res) => {
+//     res.render('admin');
+// });
 
-router.get('/managedata', async (req, res) => {
+// router.get('/managedata', async (req, res) => {
+//     try {
+//         const adminData = await Blog.find();
+//         res.render('adminData', { adminData: adminData });
+//     } catch (err) {
+//         console.log(err.message)
+//     }
+// });
+router.get('/', async (req, res) => {
     try {
         const adminData = await Blog.find();
-        res.render('adminData', { adminData: adminData });
+        res.render('admin', { adminData: adminData });
     } catch (err) {
         console.log(err.message)
     }
@@ -40,19 +48,13 @@ router.post('/adminpost/:id', async (req, res) => {
     }
 });
 
-router.get('/managedata/delete/:id', async (req, res) => {
+router.get('/delete/:id', async (req, res) => {
     try {
         await Blog.findByIdAndDelete({ _id: req.params.id });
-        res.redirect('/admin/managedata');
+        res.redirect('/admin');
     } catch (err) {
         console.log(err.message);
     }
-})
-
-
-
-
-
-
+});
 
 module.exports = router;
