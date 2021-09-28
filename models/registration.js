@@ -23,6 +23,6 @@ const registrationSchema = new mongoose.Schema({
     },
 }, { timestamps: true });
 
-const Registration = new mongoose.model('people', registrationSchema);
+const Registration = new mongoose.model('People', registrationSchema);
 
 module.exports = Registration;

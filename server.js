@@ -3,6 +3,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 8000;
 require('./Database/db')
+require('dotenv').config();
+
 
 const home = require('./routes/home');
 const about = require('./routes/about');
@@ -23,7 +25,7 @@ app.set('view engine', 'ejs');
 app.use('/', home)
 app.use('/about', about)
 app.use('/contact', contact)
-app.use('/login', login)
+// app.use('/login', login)
 app.use('/registration', registration)
 app.use('/popularblog', popularBlog)
 app.use('/postBlog', postBlog)
