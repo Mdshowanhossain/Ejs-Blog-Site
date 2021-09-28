@@ -25,7 +25,6 @@ app.set('view engine', 'ejs');
 app.use('/', home)
 app.use('/about', about)
 app.use('/contact', contact)
-// app.use('/login', login)
 app.use('/registration', registration)
 app.use('/popularblog', popularBlog)
 app.use('/postBlog', postBlog)
