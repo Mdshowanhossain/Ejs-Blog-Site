@@ -16,8 +16,8 @@ const login = require('./routes/login');
 const registration = require('./routes/registration');
 const popularBlog = require('./routes/popular');
 const postBlog = require('./routes/postBlog');
-// const readBlog = require('./routes/read');
 const admin = require('./routes/admin');
+const logout = require('./routes/authLog');
 
 
 app.use(express.static(path.join(__dirname, 'public')))
@@ -27,15 +27,14 @@ app.use(bodyParser());
 app.use(cookieParser());
 app.set('view engine', 'ejs');
 
-app.use('/', home)
-app.use('/about', about)
-app.use('/contact', contact)
-// app.use('/login', login)
-app.use('/registration', registration)
-app.use('/popularblog', popularBlog)
-app.use('/postBlog', postBlog)
-// app.use('/readBlog', readBlog)
-app.use('/admin', admin)
+app.use('/', home);
+app.use('/about', about);
+app.use('/contact', contact);
+app.use('/registration', registration);
+app.use('/popularblog', popularBlog);
+app.use('/postBlog', postBlog);
+app.use('/admin', admin);
+app.use('/logout', logout);
 
 
 app.listen(PORT, () => {

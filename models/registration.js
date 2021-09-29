@@ -41,8 +41,6 @@ registrationSchema.methods.generateToken = async function () {
     }
 }
 
-
-
 const Registration = new mongoose.model('People', registrationSchema);
 
 module.exports = Registration;
