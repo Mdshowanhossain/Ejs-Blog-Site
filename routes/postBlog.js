@@ -1,10 +1,13 @@
 const express = require('express');
 const multer = require('multer');
 const Blog = require('../models/blogSchema');
+const auth = require('../middlewares/auth');
+
+
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
+router.get('/', auth, (req, res) => {
     res.render('postBlog');
 });
 

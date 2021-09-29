@@ -17,26 +17,32 @@ router.post('/user', async (req, res) => {
 
     try {
         const users = await new Registration({
-            firstname,
-            lastname,
-            email,
+            firstname: firstname,
+            lastname: lastname,
+            email: email,
             password: hashPassword,
-            mobileNumber
-        });
-        const token = await users.generateToken();
-
-        res.cookie('jwt', token, {
-            expires: new Date(Date.now() + 1000000),
-
-        });
-
+            mobileNumber: mobileNumber
+        })
         const newUser = await users.save();
         res.redirect('/registration/login')
+
+
+        const payload = {
+            users: {
+                _id: newUser._id,
+                firstname: newUser.firstname,
+                lastname: newUser.lastname,
+            }
+        }
+
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1hr' });
+        console.log(token)
 
     } catch (err) {
         console.log(err.message);
     }
 });
+
 
 router.post('/login/user', async (req, res) => {
     const { email, password } = req.body;
@@ -54,18 +60,47 @@ router.post('/login/user', async (req, res) => {
         }
 
         if (matchPassword === true) {
-            const token = await user.generateToken();
-            res.cookie('jwt', token, {
-                expires: new Date(Date.now() + 1000000),
-
-            });
             res.redirect('/')
         }
+
+
+
+        payload = {
+            user: {
+                _id: user._id,
+                firstname: user.firstname,
+                lastname: user.lastname,
+            }
+        }
+
+
+        const token = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '1hr' })
+
+
+        console.log(token, 'From Login');
+
+
     }
     catch (err) {
         console.log(err.message);
         res.send(err);
     }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
