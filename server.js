@@ -16,7 +16,7 @@ const login = require('./routes/login');
 const registration = require('./routes/registration');
 const popularBlog = require('./routes/popular');
 const postBlog = require('./routes/postBlog');
-const admin = require('./routes/admin');
+const admin = require('./routes/admin/admin');
 const logout = require('./routes/authLog');
 
 

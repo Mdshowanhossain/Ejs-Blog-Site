@@ -1,12 +1,9 @@
 const express = require('express');
 const auth = require('../middlewares/auth');
 
-
-
 const router = express.Router();
 
 router.get('/', auth, async (req, res) => {
-
     try {
         res.clearCookie('jwt');
         await req.user.save();
@@ -15,12 +12,7 @@ router.get('/', auth, async (req, res) => {
     catch (err) {
         console.log(err);
     }
-
 });
-
-
-
-
 
 
 module.exports = router;

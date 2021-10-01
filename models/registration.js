@@ -33,7 +33,6 @@ const registrationSchema = new mongoose.Schema({
 registrationSchema.methods.generateToken = async function () {
     try {
         const token = jwt.sign({ _id: this._id, firstname: this.firstname, lastname: this.lastname }, process.env.JWT_SECRET, { expiresIn: '1hr' })
-        // console.log(token, 'From Schema')
         this.tokens = this.tokens.concat({ token: token });
         return token;
     } catch (err) {

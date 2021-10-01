@@ -9,7 +9,6 @@ router.get('/', auth, (req, res) => {
     res.render('postBlog');
 });
 
-
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
         cb(null, './public/uploads/blogImages')
@@ -46,27 +45,5 @@ router.post('/', upload.single('image'), async (req, res) => {
         console.log(err)
     }
 });
-
-
-// router.get('/all', async (req, res) => {
-//     try {
-//         const getBlog = await Blog.find()
-//         res.render('home', { getBlog: getBlog });
-//     }
-//     catch (err) {
-//         console.log(err);
-//     }
-// });
-
-
-
-
-
-
-
-
-
-
-
 
 module.exports = router;
