@@ -33,7 +33,6 @@ router.get('/', async (req, res) => {
 router.get('/read/:id', async (req, res) => {
     try {
         const findBlog = await Blog.findById({ _id: req.params.id });
-        console.log(findBlog)
         res.render('readpost', { findBlog: findBlog });
     } catch (err) {
         console.log(err.message);

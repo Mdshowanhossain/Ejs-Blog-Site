@@ -1,0 +1,26 @@
+<%- include('../partials/navbar.ejs') %>
+    <section>
+        <div class="mb-3">
+            <img src="/uploads/popularBlogImages/<%= findPopularBlog.image %>" alt="" class="card-img-top read-blog"
+                alt="...">
+
+            <div class="d-flex justify-between mt-5">
+                <p class="text-muted  mx-auto">
+                    <small class="float-end ms-5">Last updated: <%= findPopularBlog.updatedAt.toLocaleString() %>
+                    </small>
+                </p>
+                <p class="text-muted  mx-auto">
+                    <small class="float-end ms-5">Category: <%= findPopularBlog.category %></small>
+                </p>
+            </div>
+            <div class="card-body">
+                <h5 class="card-title text-center">
+                    <%= findPopularBlog.title %>
+                </h5>
+                <p class="text-center">
+                    <%= findPopularBlog.description %>
+                </p>
+            </div>
+        </div>
+    </section>
+    <%- include('../partials/footer.ejs') %>

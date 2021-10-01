@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const blogSchema = new mongoose.Schema({
+const popularBlogSchema = new mongoose.Schema({
 
     category: {
         type: String,
@@ -21,6 +21,6 @@ const blogSchema = new mongoose.Schema({
 
 }, { timestamps: true });
 
-const Blog = new mongoose.model('Blog', blogSchema);
+const PopularBlog = new mongoose.model('popularBlog', popularBlogSchema);
 
-module.exports = Blog;
+module.exports = PopularBlog;

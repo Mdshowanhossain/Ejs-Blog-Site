@@ -31,12 +31,16 @@
                     class="fas fa-user-secret me-2"></i>ADMIN</div>
             <div class="list-group list-group-flush my-3">
 
-                <!-- <a href="/admin/managedata"
-                    class="list-group-item list-group-item-action bg-transparent second-text fw-bold"><i
-                        class="fas fa-gift me-2"></i>Manage Blog</a> -->
+
+                <a href="/AdminBlog/post"
+                    class="list-group-item list-group-item-action bg-transparent text-info  fw-bold"><i
+                        class="fas fa-file-export me-2"></i>Post Blog</a>
+
 
                 <a href="#" class="list-group-item list-group-item-action bg-transparent text-danger fw-bold"><i
                         class="fas fa-power-off me-2"></i>Logout</a>
+
+
             </div>
         </div>
         <!-- /#sidebar-wrapper -->
@@ -103,7 +107,7 @@
             <div class="container-fluid px-4">
                 <!-- SHOW DATA HERE -->
                 <div class="row my-5">
-                    <h3 class="fs-4 mb-3">All Blogs</h3>
+                    <h3 class="fs-4 mb-3">HOME BLOG DATA</h3>
                     <div class="col">
                         <table class="table bg-white rounded shadow-sm  table-hover">
                             <thead>
@@ -140,13 +144,59 @@
                                             <%=data.createdAt.toLocaleString()%>
                                         </td>
                                         <td><a href="admin/<%= data._id %>">EDIT</a></td>
-                                        <!-- <td><a href="<%= data._id %>">DELETE</a></td> -->
 
-
-                                        <!-- <form action="/admin/admin/managedata/delete/<%= data._id %>"> -->
-                                        <!-- <td> <input type="submit" value="Delete"></td> -->
                                         <td><a href="admin/delete/<%= data._id %>">DELETE</a></td>
-                                        <!-- </form> -->
+                                    </tr>
+                                    <% })%>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- <=========adminBlogData==========> -->
+
+
+                <div class="row my-5">
+                    <h3 class="fs-4 mb-3">ADMIN BLOG DATA</h3>
+                    <div class="col">
+                        <table class="table bg-white rounded shadow-sm  table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">No</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">Description</th>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Created At</th>
+                                    <th scope="col">Option</th>
+                                    <th scope="col">Option</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% adminBlogData.forEach((data, index)=>{%>
+                                    <tr>
+                                        <td>
+                                            <%= index + 1%>
+                                        </td>
+                                        <td>
+                                            <%=data.category%>
+                                        </td>
+                                        <td>
+                                            <%=data.title%>
+                                        </td>
+                                        <td class="ddd dashboard-description">
+                                            <%=data.description%>
+                                        </td>
+                                        <td>
+                                            <img class="dashboard-img" src="/uploads/popularBlogImages/<%=data.image%>"
+                                                alt="">
+                                        </td>
+                                        <td>
+                                            <%=data.createdAt.toLocaleString()%>
+                                        </td>
+                                        <td><a href="AdminBlog/<%= data._id %>">EDIT</a></td>
+
+                                        <td><a href="AdminBlog/delete/<%= data._id %>">DELETE</a></td>
                                     </tr>
                                     <% })%>
                             </tbody>
