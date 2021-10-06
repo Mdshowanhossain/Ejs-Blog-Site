@@ -44,9 +44,9 @@ app.use('/logout', logout);
 
 
 
-app.use('/', (req, res) => {
-    res.render('adminLogin')
-})
+// app.use('/', (req, res) => {
+//     res.render('adminLogin')
+// })
 
 
 
