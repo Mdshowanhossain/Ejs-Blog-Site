@@ -22,6 +22,12 @@ const registrationSchema = new mongoose.Schema({
     mobilenumber: {
         mobileNumber: Number,
     },
+    role: {
+        type: String,
+        enum: ['admin', 'user'],
+        default: 'user',
+        require: true
+    },
     tokens: [{
         token: {
             type: String,

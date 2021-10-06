@@ -12,9 +12,7 @@ require('dotenv').config();
 const home = require('./routes/home');
 const about = require('./routes/about');
 const contact = require('./routes/contact');
-const login = require('./routes/login');
 const registration = require('./routes/registration');
-// const popularBlog = require('./routes/popular');
 const postBlog = require('./routes/postBlog');
 const admin = require('./routes/admin/admin');
 const logout = require('./routes/authLog');
@@ -22,10 +20,7 @@ const logout = require('./routes/authLog');
 
 
 
-
-// const adminPopularBlog = require('./routes/popular');
-
-const adminPostBlog = require('./routes/admin/adminRouter');
+const adminLogin = require('./routes/adminLogin');
 
 
 
@@ -41,7 +36,6 @@ app.use('/', home);
 app.use('/about', about);
 app.use('/contact', contact);
 app.use('/registration', registration);
-// app.use('/popularblog', popularBlog);
 app.use('/postBlog', postBlog);
 app.use('/admin', admin);
 app.use('/logout', logout);
@@ -50,7 +44,20 @@ app.use('/logout', logout);
 
 
 
-app.use('/', adminPostBlog);
+app.use('/', (req, res) => {
+    res.render('adminLogin')
+})
+
+
+
+app.get('/popularblog', (req, res) => {
+    res.render('popularBlog');
+})
+
+
+
+
+
 
 
 

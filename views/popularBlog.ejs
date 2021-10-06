@@ -20,80 +20,148 @@
     <section class="full-section ">
         <div class="articles">
 
-            <% findPopularBlog.forEach(blog=> { %>
 
-                <div class="article">
-                    <div class="left">
-                        <img src="/uploads/popularBlogImages/<%= blog.image %>" alt="article-photo">
-                    </div>
-                    <div class="right">
-                        <p class="date">userName
-                            <%= blog.updatedAt.toLocaleString() %>
-                        </p>
-                        <h5>Dhaka - Bangladesh</h5>
-                        <p class="p-description">
-                            <%= blog.description %>
 
-                                <a href=" <%=blog._id%>   ">Read more</a>
-                        </p>
-                        <div class="optionnal">
-                            <small class="text-muted float-end">Last updated <%= blog.updatedAt.toLocaleDateString() %>
-                            </small>
-                            <img class="writer-img" src="/uploads/popularBlogImages/<%= blog.image %>" alt="">
-                        </div>
+            <div class="article">
+                <div class="left">
+                    <img src="/images/an.jpg" alt="article-photo">
+                </div>
+                <div class="right">
+                    <p class="date">userName
+                        12-12-2021
+                    </p>
+                    <h5>Dhaka - Bangladesh</h5>
+                    <p class="p-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab pariatur nemo.
+                        <a href="#">Read more</a>
+                    </p>
+                    <div class="optionnal">
+                        <small class="text-muted float-end">Last updated 12-12-12
+                        </small>
+                        <img class="writer-img" src="/images/an.jpg" alt="">
                     </div>
                 </div>
+                <div class="left  mt-3">
+                    <img src="/images/an.jpg" alt="article-photo">
+                </div>
+                <div class="right">
+                    <p class="date">userName
+                        12-12-2021
+                    </p>
+                    <h5>Dhaka - Bangladesh</h5>
+                    <p class="p-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab pariatur nemo.
+                        <a href="#">Read more</a>
+                    </p>
+                    <div class="optionnal">
+                        <small class="text-muted float-end">Last updated 12-12-12
+                        </small>
+                        <img class="writer-img" src="/images/an.jpg" alt="">
+                    </div>
+                </div>
+                <div class="left  mt-3">
+                    <img src="/images/an.jpg" alt="article-photo">
+                </div>
+                <div class="right">
+                    <p class="date">userName
+                        12-12-2021
+                    </p>
+                    <h5>Dhaka - Bangladesh</h5>
+                    <p class="p-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab pariatur nemo.
+                        <a href="#">Read more</a>
+                    </p>
+                    <div class="optionnal">
+                        <small class="text-muted float-end">Last updated 12-12-12
+                        </small>
+                        <img class="writer-img" src="/images/an.jpg" alt="">
+                    </div>
+                </div>
+                <div class="left  mt-3">
+                    <img src="/images/an.jpg" alt="article-photo">
+                </div>
+                <div class="right">
+                    <p class="date">userName
+                        12-12-2021
+                    </p>
+                    <h5>Dhaka - Bangladesh</h5>
+                    <p class="p-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab pariatur nemo.
+                        <a href="#">Read more</a>
+                    </p>
+                    <div class="optionnal">
+                        <small class="text-muted float-end">Last updated 12-12-12
+                        </small>
+                        <img class="writer-img" src="/images/an.jpg" alt="">
+                    </div>
+                </div>
+                <div class="left  mt-3">
+                    <img src="/images/an.jpg" alt="article-photo">
+                </div>
+                <div class="right">
+                    <p class="date">userName
+                        12-12-2021
+                    </p>
+                    <h5>Dhaka - Bangladesh</h5>
+                    <p class="p-description">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa ab pariatur nemo.
+                        <a href="#">Read more</a>
+                    </p>
+                    <div class="optionnal">
+                        <small class="text-muted float-end">Last updated 12-12-12
+                        </small>
+                        <img class="writer-img" src="/images/an.jpg" alt="">
+                    </div>
+                </div>
+            </div>
 
-                <% }) %>
 
         </div>
         <div>
             <h4 class=" mt-4 mb-3">Recent Posts</h4>
 
-            <% findPopularBlog.forEach(blog=> { %>
 
-                <div class="recent-post">
-                    <div class="post-container mt-3">
-                        <img src="/uploads/popularBlogImages/<%= blog.image %>" alt="">
-                        <div class="post-text">
-                            <h6>
-                                <%= blog.title %>
-                            </h6>
-                            <div>
-                                <p>
-                                    <i class="fas fa-calendar-week"></i> Date: <%= blog.updatedAt.toLocaleDateString()
-                                        %> <span> </span> <i class="fas fa-box"></i>
-                                        <%= blog.category %>
-                                </p>
-                            </div>
+            <div class="recent-post">
+                <div class="post-container mt-3">
+                    <img src="/images/an.jpg" alt="">
+                    <div class="post-text">
+                        <h6>
+                            I am SOHAN
+                        </h6>
+                        <div>
+                            <p>
+                                <i class="fas fa-calendar-week"></i> Date: 12-02-2021
+                                <span> </span> <i class="fas fa-box"></i>
+                                I am CATEGORY
+                            </p>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <% }) %>
 
-                    <div class=" popular-post-div mx-au mt-4">
-                        <div class="popular-post mt-2">
-                            <div class="mx-auto">
-                                <img src="../images/an.jpg" alt="" class="img-fluid p-image">
-                            </div>
-                        </div>
-                        <div class="p-p-body mt-3 mx-auto ">
-                            <h5 class="text-center">Hello! I am Xchng</h5>
-                            <p>
-                                Hi, I'm Steven, a Florida native, who left my carrer in corporate wealth management
-                                six years corporate wealth.Stories is a clean and minimal blog template for perfect
-                                for writers
-                            </p>
-                            <span class="icon-class">
-                                Follow me:
-                                <i class="fab fa-facebook custom"></i>
-                                <i class="fab fa-linkedin custom"></i>
-                                <i class="fab fa-twitter-square custom"></i>
-                                <i class="fab fa-pinterest-square printers"></i>
-                            </span>
-                        </div>
+            <div class=" popular-post-div mx-au mt-4">
+                <div class="popular-post mt-2">
+                    <div class="mx-auto">
+                        <img src="/images/an.jpg" alt="" class="img-fluid p-image">
                     </div>
+                </div>
+                <div class="p-p-body mt-3 mx-auto ">
+                    <h5 class="text-center">Hello! I am Xchng</h5>
+                    <p>
+                        Hi, I'm Steven, a Florida native, who left my carrer in corporate wealth management
+                        six years corporate wealth.Stories is a clean and minimal blog template for perfect
+                        for writers
+                    </p>
+                    <span class="icon-class">
+                        Follow me:
+                        <i class="fab fa-facebook custom"></i>
+                        <i class="fab fa-linkedin custom"></i>
+                        <i class="fab fa-twitter-square custom"></i>
+                        <i class="fab fa-pinterest-square printers"></i>
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 

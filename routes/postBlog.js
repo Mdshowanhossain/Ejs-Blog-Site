@@ -28,7 +28,6 @@ const upload = multer({
 
 
 router.post('/', upload.single('image'), async (req, res) => {
-
     const { category, title, description } = req.body;
     try {
         const postBlog = await new Blog({
@@ -38,7 +37,6 @@ router.post('/', upload.single('image'), async (req, res) => {
             image: req.file.filename,
         })
         const saveBlog = await postBlog.save();
-        console.log(saveBlog)
         res.redirect('/')
     }
     catch (err) {

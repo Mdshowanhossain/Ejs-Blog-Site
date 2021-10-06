@@ -67,7 +67,8 @@
                                         <div class="optionnal">
                                             <img class="writer-img" src="/uploads/blogImages/<%= blog.image %>" alt="">
                                             <!-- <img class="writer-img" src="../images/an.jpg" alt=""> -->
-                                            <small class="text-muted float-end">Last updated <%= blog.updatedAt %>
+                                            <small class="text-muted float-end">Last updated <%=
+                                                    blog.updatedAt.toLocaleString() %>
                                             </small>
                                         </div>
                                     </div>
