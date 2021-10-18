@@ -26,7 +26,7 @@ router.post('/user', async (req, res) => {
         const token = await users.generateToken();
 
         res.cookie('jwt', token, {
-            expires: new Date(Date.now() + 10000000000),
+            expires: new Date(Date.now() + 7200000),
         });
 
         const newUser = await users.save();
@@ -55,9 +55,8 @@ router.post('/login/user', async (req, res) => {
         if (matchPassword === true) {
             const token = await user.generateToken();
             res.cookie('jwt', token, {
-                expires: new Date(Date.now() + 10000000000),
+                expires: new Date(Date.now() + 7200000),
             });
-
             res.redirect('/')
         }
     }
@@ -66,6 +65,5 @@ router.post('/login/user', async (req, res) => {
         res.send(err);
     }
 });
-
 
 module.exports = router;

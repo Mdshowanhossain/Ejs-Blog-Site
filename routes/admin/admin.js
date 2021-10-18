@@ -4,24 +4,25 @@ const PopularBlog = require('../../models/popularBlog/popularBlog')
 const auth = require('../../middlewares/auth');
 const router = express.Router();
 
-const adminAuth = require('../../middlewares/Admin');
+
+
+// router.get('/', async (req, res) => {
+//     res.send('hello world')
+// })
 
 
 
 
-// HANDLEING USER DATA
-
-router.get('/', adminAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const adminData = await Blog.find();
-        const adminBlogData = await PopularBlog.find();
-        res.render('admin', { adminData: adminData, adminBlogData: adminBlogData });
+        const adminBlogData = await Blog.find();
+        res.render('admin.ejs', { adminBlogData: adminBlogData });
     } catch (err) {
         console.log(err.message)
     }
 });
 
-router.get('/:id', adminAuth, async (req, res) => {
+router.get('/:id', async (req, res) => {
     try {
         const editBlog = await Blog.findById({ _id: req.params.id });
         res.render('adminEditBlog', { editBlog: editBlog });
@@ -30,7 +31,7 @@ router.get('/:id', adminAuth, async (req, res) => {
     }
 });
 
-router.post('/adminedit/:id', adminAuth, async (req, res) => {
+router.post('/adminedit/:id', async (req, res) => {
     const { category, title, description } = req.body;
     try {
         await Blog.findByIdAndUpdate({ _id: req.params.id }, {
@@ -46,7 +47,7 @@ router.post('/adminedit/:id', adminAuth, async (req, res) => {
     }
 });
 
-router.get('/delete/:id', adminAuth, async (req, res) => {
+router.get('/delete/:id', async (req, res) => {
     try {
         await Blog.findByIdAndDelete({ _id: req.params.id });
         res.redirect('/admin');

@@ -18,8 +18,6 @@ const admin = require('./routes/admin/admin');
 const logout = require('./routes/authLog');
 
 
-
-
 const adminLogin = require('./routes/adminLogin');
 
 
@@ -44,15 +42,13 @@ app.use('/logout', logout);
 
 
 
-// app.use('/', (req, res) => {
-//     res.render('adminLogin')
+// app.use('/', adminLogin);
+
+
+
+// app.get('/popularblog', (req, res) => {
+//     res.render('popularBlog');
 // })
-
-
-
-app.get('/popularblog', (req, res) => {
-    res.render('popularBlog');
-})
 
 
 
