@@ -12,7 +12,6 @@ const auth = async (req, res, next) => {
         next();
     } catch (err) {
         res.redirect('/registration/login');
-        console.log(err);
     }
 }
 module.exports = auth;

@@ -4,16 +4,15 @@ const RegistrationSchema = require('../models/registration');
 
 const sohan = async (req, res, next) => {
     try {
-        // const token = await req.cookies.jwt;
-        // const verifyUser = await jwt.verify(token, process.env.JWT_SECRET);
-
         const admin = await RegistrationSchema.findOne({ role: 'admin' });
-        console.log(admin);
 
-        // const user = await RegistrationSchema.findOne({ _id: verifyUser._id });
-        // req.token = token;
-        // req.user = user;
-        next();
+        if(admin){
+            next();
+        }
+        else{
+            res.status(500).send('You Are Not ADMIN');
+        }
+
     } catch (err) {
         res.redirect('/registration/login');
         console.log(err);

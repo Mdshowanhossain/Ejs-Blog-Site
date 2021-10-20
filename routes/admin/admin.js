@@ -3,26 +3,34 @@ const Blog = require('../../models/blogSchema');
 const PopularBlog = require('../../models/popularBlog/popularBlog')
 const auth = require('../../middlewares/auth');
 const router = express.Router();
+const sohan = require('../../middlewares/sohan');
+
+
+const RegistrationSchema = require('../../models/registration');
 
 
 
-// router.get('/', async (req, res) => {
-//     res.send('hello world')
-// })
-
-
-
-
-router.get('/', async (req, res) => {
+router.get('/', sohan, async  (req, res) => {
     try {
-        const adminBlogData = await Blog.find();
-        res.render('admin.ejs', { adminBlogData: adminBlogData });
+        const findAdmin = await RegistrationSchema.findOne({ role: 'admin' });
+        // res.render('admin')
+
+
+
+            const adminBlogData = await Blog.find();
+
+
+
+
+            res.render('admin.ejs', { adminBlogData: adminBlogData });
+    
+
     } catch (err) {
         console.log(err.message)
     }
 });
 
-router.get('/:id', async (req, res) => {
+router.get('/:id',sohan, async (req, res) => {
     try {
         const editBlog = await Blog.findById({ _id: req.params.id });
         res.render('adminEditBlog', { editBlog: editBlog });
@@ -31,7 +39,7 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.post('/adminedit/:id', async (req, res) => {
+router.post('/adminedit/:id',sohan, async (req, res) => {
     const { category, title, description } = req.body;
     try {
         await Blog.findByIdAndUpdate({ _id: req.params.id }, {
@@ -47,7 +55,7 @@ router.post('/adminedit/:id', async (req, res) => {
     }
 });
 
-router.get('/delete/:id', async (req, res) => {
+router.get('/delete/:id',sohan, async (req, res) => {
     try {
         await Blog.findByIdAndDelete({ _id: req.params.id });
         res.redirect('/admin');
