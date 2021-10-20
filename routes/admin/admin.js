@@ -8,29 +8,17 @@ const sohan = require('../../middlewares/sohan');
 
 const RegistrationSchema = require('../../models/registration');
 
-
-
-router.get('/', sohan, async  (req, res) => {
+router.get('/', auth, sohan,  async  (req, res) => {
     try {
-        const findAdmin = await RegistrationSchema.findOne({ role: 'admin' });
-        // res.render('admin')
-
-
-
             const adminBlogData = await Blog.find();
-
-
-
-
-            res.render('admin.ejs', { adminBlogData: adminBlogData });
+            res.render('admin.ejs', { adminBlogData: adminBlogData, popularBlog: popularBlog});
     
-
     } catch (err) {
         console.log(err.message)
     }
 });
 
-router.get('/:id',sohan, async (req, res) => {
+router.get('/:id', auth, sohan, async (req, res) => {
     try {
         const editBlog = await Blog.findById({ _id: req.params.id });
         res.render('adminEditBlog', { editBlog: editBlog });
@@ -39,7 +27,7 @@ router.get('/:id',sohan, async (req, res) => {
     }
 });
 
-router.post('/adminedit/:id',sohan, async (req, res) => {
+router.post('/adminedit/:id', auth, sohan, async (req, res) => {
     const { category, title, description } = req.body;
     try {
         await Blog.findByIdAndUpdate({ _id: req.params.id }, {
@@ -55,7 +43,7 @@ router.post('/adminedit/:id',sohan, async (req, res) => {
     }
 });
 
-router.get('/delete/:id',sohan, async (req, res) => {
+router.get('/delete/:id', auth, sohan,  async (req, res) => {
     try {
         await Blog.findByIdAndDelete({ _id: req.params.id });
         res.redirect('/admin');

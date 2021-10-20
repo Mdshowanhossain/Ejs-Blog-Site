@@ -218,7 +218,7 @@ section {
 }
 .articles .article .left img {
   width: 400px;
-  height: 250px;
+  height: 300px;
   border-radius: 0.4rem;
 }
 .articles .article .right {
@@ -890,8 +890,8 @@ textarea:focus {
   outline: none;
 }
 .read-blog {
-  width: 50%;
-  height: 700px;
+  width: 700px;
+  height: 100vh;
 }
 .text-style {
   text-align: justify;

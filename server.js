@@ -8,7 +8,6 @@ const PORT = process.env.PORT || 8000;
 require('./Database/db')
 require('dotenv').config();
 
-
 const home = require('./routes/home');
 const about = require('./routes/about');
 const contact = require('./routes/contact');
@@ -16,12 +15,7 @@ const registration = require('./routes/registration');
 const postBlog = require('./routes/postBlog');
 const admin = require('./routes/admin/admin');
 const logout = require('./routes/authLog');
-
-
-const adminLogin = require('./routes/adminLogin');
-
-
-
+const popularBlog = require('./routes/popularBlog'); 
 
 app.use(express.static(path.join(__dirname, 'public')))
 app.use(express.json());
@@ -39,24 +33,7 @@ app.use('/admin', admin);
 app.use('/logout', logout);
 
 
-
-
-
-// app.use('/', adminLogin);
-
-
-
-// app.get('/popularblog', (req, res) => {
-//     res.render('popularBlog');
-// })
-
-
-
-
-
-
-
-
+app.use('/popularblog',popularBlog)
 
 
 app.listen(PORT, () => {
